@@ -35,7 +35,8 @@ type HTTPDoer interface {
 
 // ClientConfig is a configuration of a client.
 type ClientConfig struct {
-	authToken string
+	authToken        string
+	CustomAuthHeader string
 
 	BaseURL              string
 	OrgID                string

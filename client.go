@@ -195,6 +195,9 @@ func (c *Client) setCommonHeaders(req *http.Request) {
 		if c.config.authToken != "" {
 			req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.config.authToken))
 		}
+		if c.config.CustomAuthHeader != "" {
+			req.Header.Set(c.config.CustomAuthHeader, c.config.authToken)
+		}
 	}
 
 	if c.config.OrgID != "" {
